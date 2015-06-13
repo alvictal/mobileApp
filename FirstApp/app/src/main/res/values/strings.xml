@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">FirstApp</string>
+
+    <string name="hello_world">Ola enfermeira!!!!</string>
+    <string name="episode_name">O dia que a terra parou</string>
+    <string name="action_settings">Settings</string>
+</resources>

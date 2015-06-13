@@ -1,0 +1,26 @@
+<resources>
+
+    <!-- Base application theme. -->
+<!--    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar"> -->
+        <!-- Customize your theme here. -->
+        <!-- Base application theme. -->
+
+<!--    </style> -->
+
+    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">@color/theme_colorPrimary</item>
+        <item name="colorPrimaryDark">@color/theme_colorPrimaryDark</item>
+        <item name="colorAccent">@color/theme_colorAccent</item>
+        <item name="android:textColor">@color/theme_textColor</item>
+        <item name="android:textColorPrimary">@color/theme_textColorPrimary</item>
+        <item name="android:windowBackground">@color/theme_windowBackground</item>
+    </style>
+
+    <style name="AppTheme.EpisodeDetails.Card.Container" parent="CardView">
+        <item name="cardCornerRadius">@dimen/card_cornerRadius</item>
+        <item name="android:colorBackground">@color/default_background_second</item>
+
+    </style>
+
+
+</resources>
