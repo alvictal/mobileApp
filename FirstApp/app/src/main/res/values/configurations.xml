@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Content API -->
+    <string name="api_url_base">https://api-v2launch.trakt.tv</string>
+    <string name="api_url_episode">/shows/{0}/seasons/{1}/episodes/{2}</string>
+    <string name="api_version">2</string>
+    <string name="api_key">63932c1e041b9d7a2fe185b95b0a534ef7263ecd012c490a7548481c39ab43fd</string>
+    <integer name="api_timeout_read">10000</integer>
+    <integer name="api_timeout_connect">15000</integer>
+
+    <!-- Updates API -->
+    <string name="api_url_updates">https://movile-up-android.firebaseio.com</string>
+
+    <!-- Broadcast -->
+    <string name="broacast_action_show_update">com.movile.up.seriestracker.action.SHOW_UPDATE</string>
+
+    <!-- Database -->
+    <string name="database_authority">com.movile.up.seriestracker.authority</string>
+
+</resources>
