@@ -16,10 +16,50 @@
         <item name="android:windowBackground">@color/theme_windowBackground</item>
     </style>
 
-    <style name="AppTheme.EpisodeDetails.Card.Container" parent="CardView">
+    <style name="AppTheme.Card" parent="CardView">
         <item name="cardCornerRadius">@dimen/card_cornerRadius</item>
         <item name="android:colorBackground">@color/default_background_second</item>
+        <item name="android:layout_marginTop">@dimen/activity_vertical_margin</item>
+        <item name="android:layout_marginLeft">@dimen/activity_horizontal_margin</item>
+        <item name="android:layout_marginRight">@dimen/activity_horizontal_margin</item>
+    </style>
 
+    <style name="AppTheme.EpisodeDetails">
+        <item name="android:layout_marginLeft">@dimen/activity_horizontal_margin</item>
+        <item name="android:layout_marginRight">@dimen/activity_horizontal_margin</item>
+        <item name="android:layout_marginBottom">@dimen/activity_vertical_margin</item>
+        <item name="android:layout_marginTop">@dimen/activity_vertical_margin</item>
+    </style>
+
+    <style name="AppTheme.EpisodeDetails.Title" parent="AppTheme.EpisodeDetails">
+        <item name="android:textColor">@color/default_textColor_first</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:textSize">@dimen/default_textSize_large</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="AppTheme.EpisodeDetails.DateText" parent="AppTheme.EpisodeDetails">
+        <item name="android:textColor">@color/default_color_first</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textSize">@dimen/default_textSize_medium</item>
+    </style>
+
+    <style name="AppTheme.EpisodeDetails.Summary" parent="AppTheme.EpisodeDetails">
+        <item name="android:textColor">@color/default_textColor_third</item>
+        <item name="android:textSize">@dimen/default_textSize_medium</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="AppTheme.EpisodeDetails.Summary.Line" parent="AppTheme.EpisodeDetails.Summary">
+        <item name="android:background">@color/default_background_third</item>
+        <item name="android:layout_marginTop">@dimen/default_spacing_small</item>
+    </style>
+
+    <style name="AppTheme.EpisodeDetails.Summary.Episode" parent="AppTheme.EpisodeDetails.Summary">
+        <item name="android:textColor">@color/default_textColor_fourth</item>
+        <item name="android:textSize">@dimen/default_textSize_small</item>
+        <item name="android:layout_marginTop">@dimen/default_spacing_small</item>
     </style>
 
 

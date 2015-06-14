@@ -1,83 +1,105 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".EpisodeDetailsActivity">
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="248dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/highlight_placeholder"
-        android:id="@+id/imagePreviewEpisode"/>
+    <RelativeLayout  android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".EpisodeDetailsActivity">
 
-    <RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" >
-        <ImageView
-            android:layout_marginTop="43dp"
-            android:layout_width="match_parent"
-            android:layout_height="25dp"
-            android:src="@drawable/overlay"
-            android:scaleType="centerCrop" />
-
-        <ImageButton
-            android:layout_width="15dp"
-            android:layout_height="17dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="43.5dp"
-            android:id="@+id/imageButtonBack"
-            android:src="@drawable/abc_ic_ab_back_mtrl_am_alpha"/>
-
-        <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/textViewEpisode"
-            android:layout_marginTop="43.5dp"
-            android:layout_marginLeft="72dp"
-            android:gravity="center"
-            android:layout_toRightOf="@id/imageButtonBack"
-            style="@style/Base.TextAppearance.AppCompat.Title"
-
-            />
-
-        <ImageButton
-            android:layout_width="15dp"
-            android:layout_height="19.5dp"
-            android:layout_marginTop="43.5dp"
-            android:layout_marginLeft="80dp"
-            android:id="@+id/imageButtonGo"
-            android:layout_toRightOf="@id/textViewEpisode"
-            android:src="@drawable/abc_ic_menu_share_mtrl_alpha"/>
 
         <ImageView
-            android:layout_marginTop="180dp"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:src="@drawable/overlay"
-            android:scaleType="centerCrop" />
+            android:layout_height="248dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/highlight_placeholder"
+            android:id="@+id/imagePreviewEpisode"/>
 
-        <TextView android:text="@string/episode_name" android:layout_width="wrap_content"
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="248dp"
+            android:src="@drawable/overlay"
+            android:scaleType="fitXY" />
+
+
+        <TextView android:text="@string/episode_name"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/textViewTitle"
-            android:layout_marginTop="180dp"
-            android:layout_toRightOf="@id/imageButtonBack"
-            style="@style/Base.TextAppearance.AppCompat.Title"
-
+            android:layout_alignBottom="@id/imagePreviewEpisode"
+            style="@style/AppTheme.EpisodeDetails.Title"
             />
 
+
+        <android.support.v7.widget.CardView
+            style="@style/AppTheme.Card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity = "center"
+            android:layout_below="@id/imagePreviewEpisode"
+            android:id="@+id/cardViewDate" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="27dp"
+                    android:layout_height="32dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginLeft="19dp"
+                    android:src="@drawable/episode_details_clock"
+                    android:id="@+id/imageViewClockEpisode"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="23dp"
+                    android:layout_marginLeft="64dp"
+                    android:text="@string/episode_date"
+                    android:id="@+id/textViewDate"
+                    style="@style/AppTheme.EpisodeDetails.DateText"/>
+            </RelativeLayout>
+
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            style="@style/AppTheme.Card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity = "center"
+            android:layout_below="@id/cardViewDate"
+            android:id="@+id/cardViewSinopse" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    style="@style/AppTheme.EpisodeDetails.Summary"
+                    android:text="@string/summary_text"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    style="@style/AppTheme.EpisodeDetails.Summary.Line" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textViewEpisodeDetailsSummary"
+                    android:text="@string/summary_episode"
+                    style="@style/AppTheme.EpisodeDetails.Summary.Episode"/>
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
     </RelativeLayout>
-
-
-    <android.support.v7.widget.CardView
-        xmlns:card_view="http://schemas.android.com/apk/res-auto"
-        card_view:cardCornerRadius="@dimen/card_cornerRadius"
-        android:layout_width="wrap_content"
-        android:layout_height="64dp"
-        android:layout_marginTop="16dp"
-        android:gravity = "center"
-        android:layout_below="@id/imagePreviewEpisode" />
-
-
-    </android.support.v7.widget.CardView>
-
-</RelativeLayout>
+</ScrollView>
