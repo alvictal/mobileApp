@@ -14,7 +14,7 @@
             android:layout_height="248dp"
             android:scaleType="centerCrop"
             android:src="@drawable/highlight_placeholder"
-            android:id="@+id/imagePreviewEpisode"/>
+            android:id="@+id/IP_Episode_Details"/>
 
         <ImageView
             android:layout_width="match_parent"
@@ -26,8 +26,8 @@
         <TextView android:text="@string/episode_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/textViewTitle"
-            android:layout_alignBottom="@id/imagePreviewEpisode"
+            android:id="@+id/TV_Episode_Details_Title"
+            android:layout_alignBottom="@id/IP_Episode_Details"
             style="@style/AppTheme.EpisodeDetails.Title"
             />
 
@@ -38,8 +38,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:gravity = "center"
-            android:layout_below="@id/imagePreviewEpisode"
-            android:id="@+id/cardViewDate" >
+            android:layout_below="@id/IP_Episode_Details"
+            android:id="@+id/CV_Episode_Details_Date" >
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -52,7 +52,7 @@
                     android:layout_marginBottom="16dp"
                     android:layout_marginLeft="19dp"
                     android:src="@drawable/episode_details_clock"
-                    android:id="@+id/imageViewClockEpisode"/>
+                    android:id="@+id/IV_Episode_Details_Clock"/>
 
                 <TextView
                     android:layout_width="match_parent"
@@ -60,7 +60,7 @@
                     android:layout_marginTop="23dp"
                     android:layout_marginLeft="64dp"
                     android:text="@string/episode_date"
-                    android:id="@+id/textViewDate"
+                    android:id="@+id/TV_Episode_Details_Date"
                     style="@style/AppTheme.EpisodeDetails.DateText"/>
             </RelativeLayout>
 
@@ -71,8 +71,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:gravity = "center"
-            android:layout_below="@id/cardViewDate"
-            android:id="@+id/cardViewSinopse" >
+            android:layout_below="@id/CV_Episode_Details_Date"
+            android:id="@+id/CV_Episode_Details_Sinopse" >
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -94,7 +94,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/textViewEpisodeDetailsSummary"
+                    android:id="@+id/TV_Episode_Details_Summary"
                     android:text="@string/summary_episode"
                     style="@style/AppTheme.EpisodeDetails.Summary.Episode"/>
             </LinearLayout>
