@@ -12,6 +12,7 @@
     <dimen name="default_textSize_large">18sp</dimen>
     <dimen name="default_textSize_veryLarge">24sp</dimen>
     <dimen name="card_cornerRadius">4dp</dimen>
+    <dimen name="list_view_divider_color">4dp</dimen>
 
     <!-- TO BE CONTINUED -->
 

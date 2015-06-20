@@ -1,0 +1,22 @@
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.next.firsapp.activity.SeasonDetailsActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="248dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/highlight_placeholder"
+        android:id="@+id/IP_Season_Details"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="248dp"
+        android:src="@drawable/overlay"
+        android:scaleType="fitXY" />
+
+
+
+</RelativeLayout>

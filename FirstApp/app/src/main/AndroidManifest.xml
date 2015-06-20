@@ -18,6 +18,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".activity.SeasonDetailsActivity"
+            android:label="@string/title_activity_season_details" >
+        </activity>
     </application>
 
 </manifest>

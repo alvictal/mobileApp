@@ -5,7 +5,7 @@ import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import com.example.next.firsapp.activity.onListenerBitmap;
+import com.example.next.firsapp.remote.service.onListenerBitmap;
 
 import java.io.IOException;
 import java.net.URL;

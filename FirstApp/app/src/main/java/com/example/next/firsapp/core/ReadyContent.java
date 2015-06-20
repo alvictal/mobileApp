@@ -3,7 +3,7 @@ package com.example.next.firsapp.core;
 import android.content.Context;
 import android.os.AsyncTask;
 
-import com.example.next.firsapp.activity.onListenerEpisode;
+import com.example.next.firsapp.remote.service.onListenerEpisode;
 import com.example.next.firsapp.business.FetchLocalEpisodeDetails;
 import com.example.next.firsapp.model.Episode;
 

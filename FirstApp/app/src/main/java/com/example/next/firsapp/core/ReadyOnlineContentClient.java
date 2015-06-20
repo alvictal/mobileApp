@@ -1,12 +1,11 @@
 package com.example.next.firsapp.core;
 
-import android.app.Activity;
 import android.app.LoaderManager;
 import android.content.Context;
 import android.content.Loader;
 import android.os.Bundle;
 
-import com.example.next.firsapp.activity.onListenerEpisode;
+import com.example.next.firsapp.remote.service.onListenerEpisode;
 import com.example.next.firsapp.model.Episode;
 
 /**

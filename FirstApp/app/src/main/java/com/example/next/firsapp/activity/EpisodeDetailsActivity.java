@@ -1,7 +1,6 @@
 package com.example.next.firsapp.activity;
 
 import android.app.Activity;
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -18,52 +17,52 @@ import com.bumptech.glide.Glide;
 import com.example.next.firsapp.R;
 import com.example.next.firsapp.model.Episode;
 import com.example.next.firsapp.model.Images;
+import com.example.next.firsapp.presenter.EpisodeDetailsPresenter;
 import com.example.next.firsapp.util.FormatUtil;
-import retrofit.Callback;
-import retrofit.RestAdapter;
-import retrofit.RetrofitError;
-import retrofit.client.Response;
+import com.example.next.firsapp.view.EpisodeDetailsView;
+
 
 //Usado inicialmente para aula com asynctask e interfaces
 //public class EpisodeDetailsActivity extends Activity implements onListenerEpisode, onListenerBitmap {
 
-public class EpisodeDetailsActivity extends Activity {
+public class EpisodeDetailsActivity extends Activity implements EpisodeDetailsView {
+    private String show;
+    private long season;
+    private long episode;
 
-    private RestAdapter mAdapter;
+    public void EpisodeDetailsActivity(){
+        show = "sons-of-anarchy";
+        season = 2L;
+        episode = 10L;
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
+
+        show = "sons-of-anarchy";
+        season = 3L;
+        episode = 10L;
+
+        EpisodeDetailsPresenter episodeDetailsPresenter;
 
         setContentView(R.layout.episode_details_activity);
 
+        episodeDetailsPresenter = new EpisodeDetailsPresenter(this,this);
+        episodeDetailsPresenter.onEpisodeDetailsRetrofit(show, season, episode);
+
        // new ApiConfiguration(this);
 
-       //  -> Usado para pegar json no próprio local
-       // new ReadyContent(this).execute(this);
+
 
         // --> Usado para pegar o json remoto usando loader
         // getLoaderManager().initLoader(0, null, new ReadyOnlineContentClient(this,this)).forceLoad();
 
-        // --> Usando agora retrofit para fazer a comunicação http e pegar os dados
-        mAdapter = new RestAdapter.Builder().setEndpoint(this.getResources().getString(R.string.api_url_base)).build();
-        EpisodeRemoteService service = mAdapter.create(EpisodeRemoteService.class);
-        service.getEpisodeDetails("silicon-valley", 2L, 3L, new Callback<Episode>() {
-            @Override
-            public void success(Episode episode, Response response) {
-                onEpisodedLoaded(episode);
-            }
-
-            @Override
-            public void failure(RetrofitError error) {
-                Log.d("retrofit", "Error to load http");
-            }
-        });
     }
 
     // Usado inicialmente como Interface para mostrar os detalhes do episódio
-    public void onEpisodedLoaded(Episode episode) {
+    public void displayEpisode(Episode episode) {
 
 
         String screenshotUrl = episode.images().screenshot().get(Images.ImageSize.THUMB);
@@ -76,6 +75,7 @@ public class EpisodeDetailsActivity extends Activity {
                 placeholder(R.drawable.highlight_placeholder).
                 centerCrop().
                 into( (ImageView) findViewById(R.id.IP_Episode_Details));
+
         ((TextView) findViewById(R.id.TV_Episode_Details_Title)).setText(episode.title());
         ((TextView) findViewById(R.id.TV_Episode_Details_Summary)).setText(episode.overview());
         String firstAired = FormatUtil.formatDate(FormatUtil.formatDate(episode.firstAired())).toString();
@@ -85,10 +85,10 @@ public class EpisodeDetailsActivity extends Activity {
 
 
     // Usado como interface para carregar a imagem pelo AsyncTask
-    public void onBitmapLoaded(Bitmap bitmap) {
+    //public void onBitmapLoaded(Bitmap bitmap) {
         //Faça a imagem aparacer
-        ((ImageView) findViewById(R.id.IP_Episode_Details)).setImageBitmap(bitmap);
-    }
+    //    ((ImageView) findViewById(R.id.IP_Episode_Details)).setImageBitmap(bitmap);
+    //}
 
 
     /*
