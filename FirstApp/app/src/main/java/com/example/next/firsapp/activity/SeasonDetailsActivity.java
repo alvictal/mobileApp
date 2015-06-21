@@ -1,18 +1,59 @@
 package com.example.next.firsapp.activity;
 
+import android.app.Activity;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.next.firsapp.R;
+import com.example.next.firsapp.model.Images;
+import com.example.next.firsapp.model.Season;
+import com.example.next.firsapp.presenter.SeasonDetailsPresenter;
+import com.example.next.firsapp.view.SeasonDetailsView;
 
-public class SeasonDetailsActivity extends ActionBarActivity {
+public class SeasonDetailsActivity extends Activity implements SeasonDetailsView {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.season_details_header);
+
+        //    setContentView(R.layout.season_details_header);
+
+        View header = View.inflate(this, R.layout.season_details_header, null);
+
+        ListView view = (ListView) findViewById(R.id.LV_Season_Details_Episodes);
+        view.addHeaderView(header,null,false);
+        SeasonDetailsPresenter seasonDetailsPresenter = new SeasonDetailsPresenter(this,this);
+
+    }
+
+    public void displaySeason(Season season) {
+        String screenShotUrl;
+        String seasonShotUrl;
+
+        screenShotUrl = season.images().screenshot().get(Images.ImageSize.THUMB);
+        seasonShotUrl = season.images().poster().get(Images.ImageSize.THUMB);
+
+        Glide.with(this).
+                load(screenShotUrl).
+                placeholder(R.drawable.highlight_placeholder).
+                centerCrop().into((ImageView) findViewById(R.id.IP_Season_Details));
+
+        Glide.with(this).
+                load(seasonShotUrl).
+                placeholder(R.drawable.season_details_show_placeholder).
+                centerCrop().into((ImageView) findViewById(R.id.IP_Season_Image));
+
+        ((TextView) findViewById(R.id.TV_Season_Year)).setText(season.airedEpisodes().toString());
+        ((TextView) findViewById(R.id.TV_Season_Note)).setText(season.rating().toString());
+
     }
 
     @Override
