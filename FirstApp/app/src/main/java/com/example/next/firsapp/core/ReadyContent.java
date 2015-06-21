@@ -25,6 +25,6 @@ public class ReadyContent extends AsyncTask<Context, Integer, Episode> {
     }
 
     protected void onPostExecute(Episode episode) {
-        mListener.onEpisodedLoaded(episode);
+        mListener.onEpisodeLoaded(episode);
     }
 }

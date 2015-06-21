@@ -2,7 +2,7 @@
 <ListView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:divider="@dimen/list_view_divider_color"
-    android:dividerHeight="@color/list_view_divider_height"
+    android:divider="@color/list_view_divider_color"
+    android:dividerHeight="@dimen/list_view_divider_height"
     android:id="@+id/LV_Season_Details_Episodes">
 </ListView>

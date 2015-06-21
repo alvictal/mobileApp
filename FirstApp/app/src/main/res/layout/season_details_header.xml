@@ -1,4 +1,3 @@
-
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -17,6 +16,35 @@
         android:src="@drawable/overlay"
         android:scaleType="fitXY" />
 
+    <ImageView
+        android:layout_width="88dp"
+        android:layout_height="128dp"
+        android:src="@drawable/season_details_show_placeholder"
+        android:layout_marginTop="184dp"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:id="@+id/IP_Season_Image"/>
 
+    <TextView
+        android:layout_width="88dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="151dp"
+        android:text="@string/season_details_year"
+        android:id="@+id/TV_Season_Year"
+        style="@style/AppTheme.SeasonHeader.Year"/>
+
+    <TextView
+        android:layout_width="88dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="329dp"
+        android:text="@string/season_details_episodes"
+        android:id="@+id/TV_Season_Episodes"
+        style="@style/AppTheme.SeasonHeader.Episodes"/>
+
+    <TextView
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:text="@string/season_details_note"
+        android:id="@+id/TV_Season_Note"
+        style="@style/AppTheme.SeasonHeader.Note"/>
 
 </RelativeLayout>

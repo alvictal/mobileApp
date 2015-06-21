@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
+    android:layout_height="match_parent"
+    android:background="@color/default_background_second">
 
     <TextView
         android:layout_width="40dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginLeft="16dp"
-        android:text="E1"
-        android:paddingTop="10dp"
-        android:paddingLeft="10dp"
+        android:text="@string/episode_item_number"
+        android:gravity="center"
         android:background="@drawable/episode_item_number"
-        android:id="@+id/TV_Episode_Item_Number"/>
+        android:id="@+id/TV_Episode_Item_Number"
+        style="@style/AppTheme.EpisodeItem.Number"/>
+
+    <TextView
+        android:layout_width="248dp"
+        android:layout_height="wrap_content"
+        android:text="@string/episode_item_title"
+        android:id="@+id/TV_Episode_Item_Title"
+        style="@style/AppTheme.EpisodeItem.Title"/>
 
 </LinearLayout>

@@ -29,7 +29,7 @@ public class ReadyOnlineContentClient implements LoaderManager.LoaderCallbacks<E
     }
 
     public void onLoadFinished(Loader loader, Episode episode) {
-        mListener.onEpisodedLoaded(episode);
+        mListener.onEpisodeLoaded(episode);
     }
 
     public void onLoaderReset(Loader loader) {

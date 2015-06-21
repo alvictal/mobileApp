@@ -62,5 +62,52 @@
         <item name="android:layout_marginTop">@dimen/default_spacing_small</item>
     </style>
 
+    <style name="AppTheme.EpisodeItem" parent="AppTheme">
+        <item name="android:layout_marginTop">@dimen/activity_vertical_margin</item>
+        <item name="android:layout_marginLeft">@dimen/activity_horizontal_margin</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="AppTheme.EpisodeItem.Number" parent="AppTheme.EpisodeItem">
+        <item name="android:textColor">@color/default_textColor_first</item>
+        <item name="android:textSize">@dimen/default_textSize_medium</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
+
+    <style name="AppTheme.EpisodeItem.Title" parent="AppTheme.EpisodeItem">
+        <item name="android:textColor">@color/default_textColor_fourth</item>
+        <item name="android:textSize">@dimen/default_textSize_medium</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+    
+    <style name="AppTheme.SeasonHeader" parent="AppTheme">
+        <item name="android:layout_marginLeft">@dimen/activity_horizontal_margin</item>
+    </style>
+
+    <style name="AppTheme.SeasonHeader.Year" parent="AppTheme.SeasonHeader">
+        <item name="android:textColor">@color/default_textColor_first</item>
+        <item name="android:textSize">@dimen/default_textSize_veryLarge</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="AppTheme.SeasonHeader.Episodes" parent="AppTheme.SeasonHeader">
+        <item name="android:textColor">@color/default_textColor_third</item>
+        <item name="android:textSize">@dimen/default_textSize_medium</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="AppTheme.SeasonHeader.Note" parent="AppTheme.SeasonHeader">
+        <item name="android:textColor">@color/default_textColor_first</item>
+        <item name="android:textSize">@dimen/default_textSize_large</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginTop">264dp</item>
+        <item name="android:layout_marginLeft">296dp</item>
+        <item name="android:background">@color/default_color_second</item>
+    </style>
+
 
 </resources>
