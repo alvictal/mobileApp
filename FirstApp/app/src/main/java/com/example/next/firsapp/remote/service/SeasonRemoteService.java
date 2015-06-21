@@ -1,6 +1,9 @@
 package com.example.next.firsapp.remote.service;
 
+import com.example.next.firsapp.model.Episode;
 import com.example.next.firsapp.model.Season;
+
+import java.util.List;
 
 import retrofit.Callback;
 import retrofit.http.GET;
@@ -21,5 +24,5 @@ public interface SeasonRemoteService {
     void getEpisodeDetails(
             @Path("show") String show,
             @Path("season") Long season,
-            Callback<Season> callback);
+            Callback<List<Episode>> callback);
 }

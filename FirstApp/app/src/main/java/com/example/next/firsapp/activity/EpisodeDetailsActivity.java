@@ -30,20 +30,22 @@ public class EpisodeDetailsActivity extends Activity implements EpisodeDetailsVi
     private long season;
     private long episode;
 
-    public void EpisodeDetailsActivity(){
-        show = "sons-of-anarchy";
-        season = 2L;
-        episode = 10L;
-    }
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        show = "sons-of-anarchy";
-        season = 3L;
-        episode = 10L;
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            show = extras.getString("SHOW");
+            season = extras.getLong("SEASON");
+            episode = extras.getLong("EPISODE");
+        } else {
+            show = "sons-of-anarchy";
+            season = 3L;
+            episode = 10L;
+        }
+
 
         EpisodeDetailsPresenter episodeDetailsPresenter;
 
