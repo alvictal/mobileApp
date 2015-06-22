@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="248dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/highlight_placeholder"
+        android:id="@+id/IP_Show_Details_Header_Preview"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="248dp"
+        android:src="@drawable/overlay"
+        android:scaleType="fitXY" />
+
+    <TextView
+        android:layout_marginTop="184dp"
+        android:layout_marginLeft="32dp"
+        android:text="@string/season_details_note"
+        android:id="@+id/TV_Season_Note"
+        style="@style/AppTheme.SeasonHeader.Note"/>
+
+    <TextView
+        android:layout_marginTop="151dp"
+        android:layout_marginLeft="16dp"
+        android:text="@string/season_details_year"
+        android:id="@+id/TV_Season_Year"
+        style="@style/AppTheme.SeasonHeader.Year"/>
+
+    <ImageView
+        android:layout_marginTop="174.9dp"
+        android:layout_marginLeft="287.8dp"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:background="@drawable/episode_item_number"
+        android:src="@drawable/show_details_favorite_off"
+        android:scaleType="center"
+        android:id="@+id/IV_Season_Like"/>
+
+</RelativeLayout>

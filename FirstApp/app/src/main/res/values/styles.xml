@@ -64,6 +64,7 @@
 
     <style name="AppTheme.EpisodeItem" parent="AppTheme">
         <item name="android:layout_marginTop">@dimen/activity_vertical_margin</item>
+        <item name="android:layout_marginBottom">@dimen/activity_vertical_margin</item>
         <item name="android:layout_marginLeft">@dimen/activity_horizontal_margin</item>
         <item name="android:fontFamily">sans-serif-medium</item>
     </style>
@@ -86,9 +87,13 @@
     </style>
 
     <style name="AppTheme.SeasonHeader.Year" parent="AppTheme.SeasonHeader">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">@color/default_textColor_first</item>
         <item name="android:textSize">@dimen/default_textSize_veryLarge</item>
         <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:paddingLeft">@dimen/default_spacing_large</item>
+        <item name="android:paddingRight">@dimen/default_spacing_large</item>
         <item name="android:gravity">center</item>
     </style>
 
@@ -100,14 +105,33 @@
     </style>
 
     <style name="AppTheme.SeasonHeader.Note" parent="AppTheme.SeasonHeader">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingLeft">9dp</item>
+        <item name="android:paddingRight">9dp</item>
+        <item name="android:paddingTop">8.6dp</item>
+        <item name="android:paddingBottom">13.5dp</item>
         <item name="android:textColor">@color/default_textColor_first</item>
         <item name="android:textSize">@dimen/default_textSize_large</item>
         <item name="android:fontFamily">sans-serif-medium</item>
         <item name="android:gravity">center</item>
-        <item name="android:layout_marginTop">264dp</item>
-        <item name="android:layout_marginLeft">296dp</item>
-        <item name="android:background">@color/default_color_second</item>
+        <item name="android:background">@drawable/rating</item>
     </style>
 
+    <style name="AppTheme.Show" parent="AppTheme">
+        <item name="android:layout_marginBottom">@dimen/activity_vertical_margin</item>
+    </style>
+
+    <style name="AppTheme.Show.Genre" parent="AppTheme.Show">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/rating</item>
+        <item name="android:paddingLeft">13dp</item>
+        <item name="android:paddingRight">13dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/default_textColor_first</item>
+        <item name="android:textSize">@dimen/default_textSize_medium</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
 
 </resources>
