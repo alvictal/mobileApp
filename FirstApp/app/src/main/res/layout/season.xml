@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/AppTheme.Card"
+    android:layout_width="88dp"
+    android:layout_height="wrap_content"
+    android:gravity = "center"
+    android:id="@+id/CV_Show_Season_Card" >
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="128dp"
+            android:src="@drawable/season_item_placeholder"
+            android:scaleType="fitXY"
+            android:id="@+id/IV_Show_Season"/>
+
+        <TextView
+            android:text="@string/season_number"
+            android:id="@+id/TV_Show_Season_Number"
+            style="@style/AppTheme.Show.Season"/>
+
+        <TextView
+            android:text="@string/season_details_episodes"
+            android:id="@+id/TV_Show_Episode_Number"
+            style="@style/AppTheme.Show.Episode"/>
+
+    </LinearLayout>
+</android.support.v7.widget.CardView>

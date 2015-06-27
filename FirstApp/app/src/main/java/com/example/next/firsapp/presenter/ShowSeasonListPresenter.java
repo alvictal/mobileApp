@@ -5,8 +5,11 @@ import android.util.Log;
 
 import com.example.next.firsapp.R;
 import com.example.next.firsapp.model.Episode;
+import com.example.next.firsapp.model.Season;
 import com.example.next.firsapp.remote.service.EpisodeListRemoteService;
+import com.example.next.firsapp.remote.service.SeasonRemoteService;
 import com.example.next.firsapp.view.SeasonDetailsView;
+import com.example.next.firsapp.view.ShowSeasonListView;
 
 import java.util.List;
 
@@ -16,26 +19,26 @@ import retrofit.RetrofitError;
 import retrofit.client.Response;
 
 /**
- * Created by aluisio on 6/21/15.
+ * Created by movile on 27/06/15.
  */
-public class SeasonDetailsPresenter {
-    private SeasonDetailsView mView;
+public class ShowSeasonListPresenter {
+    private ShowSeasonListView mView;
     private RestAdapter mAdapter;
     private Context context;
 
-    public SeasonDetailsPresenter (Context contextP, SeasonDetailsView mViewP) {
+    public ShowSeasonListPresenter (Context contextP, ShowSeasonListView mViewP) {
         context = contextP;
         mView = mViewP;
     }
 
     // --> Usando agora retrofit para fazer a comunicação http e pegar os dados
-    public void onSeasonDetailsRetrofit(String show, long season) {
+    public void onSeasonDetailsRetrofit(String show) {
         mAdapter = new RestAdapter.Builder().setEndpoint(context.getResources().getString(R.string.api_url_base)).build();
-        EpisodeListRemoteService service = mAdapter.create(EpisodeListRemoteService.class);
-        service.getEpisodeDetails(show, season, new Callback<List<Episode>>() {
+        SeasonRemoteService service = mAdapter.create(SeasonRemoteService.class);
+        service.getSeasonList(show, new Callback<List<Season>>() {
             @Override
-            public void success (List<Episode> episode, Response response) {
-                onSeasonLoaded(episode);
+            public void success(List<Season> seasons, Response response) {
+                mView.displayShowSeasonList(seasons);
             }
 
             @Override
@@ -43,9 +46,5 @@ public class SeasonDetailsPresenter {
                 Log.d("retrofit", "Error to load http:" + error.getCause());
             }
         });
-    }
-
-    public void onSeasonLoaded(List<Episode> episode){
-        mView.displaySeason(episode);
     }
 }

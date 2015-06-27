@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="114dp"
+        android:layout_height="180dp"
+        android:src="@drawable/season_details_show_placeholder"
+        android:id="@+id/IV_Show_Main_Image"
+        android:scaleType="fitXY"/>
+</RelativeLayout>

@@ -4,16 +4,13 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
-import android.util.Log;
 
 import com.example.next.firsapp.R;
 import com.example.next.firsapp.model.Episode;
-import com.example.next.firsapp.remote.service.OnClickListener;
+import com.example.next.firsapp.remote.service.OnClickEpisodeListener;
 
-import java.security.PrivateKey;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,10 +19,10 @@ import java.util.List;
  */
 public class EpisodeListAdapter extends ArrayAdapter<Episode> {
     private List<Episode> episodes = new ArrayList<>();
-    private OnClickListener mListener;
+    private OnClickEpisodeListener mListener;
     Context context;
 
-    public EpisodeListAdapter(Context contextP, OnClickListener mListenerP) {
+    public EpisodeListAdapter(Context contextP, OnClickEpisodeListener mListenerP) {
         super(contextP, R.layout.episode_item);
         context = contextP;
         mListener = mListenerP;
@@ -78,31 +75,31 @@ public class EpisodeListAdapter extends ArrayAdapter<Episode> {
         notifyDataSetChanged();
     }
 
+    public class ViewHolder {
+        private TextView title;
+        private TextView number;
+        private int position;
 
-}
+        public ViewHolder(View root) {
+            title = (TextView) root.findViewById(R.id.TV_Episode_Item_Title);
+            number = (TextView) root.findViewById(R.id.TV_Episode_Item_Number);
+        }
+        public TextView getTitle() {
+            return title;
+        }
 
-class ViewHolder {
-    private TextView title;
-    private TextView number;
-    private int position;
+        public TextView getNumber() {
+            return number;
+        }
 
-    public ViewHolder(View root) {
-        title = (TextView) root.findViewById(R.id.TV_Episode_Item_Title);
-        number = (TextView) root.findViewById(R.id.TV_Episode_Item_Number);
-    }
-    public TextView getTitle() {
-        return title;
-    }
+        public void setPosition(int position) {
+            this.position = position;
+        }
 
-    public TextView getNumber() {
-        return number;
-    }
-
-    public void setPosition(int position) {
-        this.position = position;
-    }
-
-    public int getPosition() {
-        return position;
+        public int getPosition() {
+            return position;
+        }
     }
 }
+
+

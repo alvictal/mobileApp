@@ -6,7 +6,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="248dp"
-        android:scaleType="centerCrop"
+        android:scaleType="fitXY"
         android:src="@drawable/highlight_placeholder"
         android:id="@+id/IP_Season_Details"/>
 
@@ -22,13 +22,8 @@
         android:src="@drawable/season_details_show_placeholder"
         android:layout_marginTop="184dp"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
-        android:id="@+id/IP_Season_Image"/>
-
-    <TextView
-        android:layout_marginTop="151dp"
-        android:text="@string/season_details_year"
-        android:id="@+id/TV_Season_Year"
-        style="@style/AppTheme.SeasonHeader.Year"/>
+        android:id="@+id/IP_Season_Image"
+        android:scaleType="fitXY"/>
 
     <TextView
         android:layout_width="88dp"

@@ -8,7 +8,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="248dp"
-        android:scaleType="centerCrop"
+        android:scaleType="fitXY"
         android:src="@drawable/highlight_placeholder"
         android:id="@+id/IP_Show_Details_Header_Preview"/>
 

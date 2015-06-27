@@ -17,6 +17,8 @@
     <string name="season_details_episodes">Episodes</string>
     <string name="season_details_year">2015</string>
     <string name="season_details_note">9.9</string>
+    <string name="season_number">Season</string>
     <string name="show_details_genres_text">Genres</string>
     <string name="show_details_text">Details</string>
+
 </resources>
