@@ -65,18 +65,13 @@
                     android:layout_height="1dp"
                     style="@style/AppTheme.EpisodeDetails.Summary.Line" />
 
-                <LinearLayout
+                <GridView xmlns:android="http://schemas.android.com/apk/res/android"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
-                    android:orientation="horizontal"
-                    android:id="@+id/LL_Show_Details_Genre"
-                    style="@style/AppTheme.Show">
-                    <TextView
-                        android:text="drama"
-                        style="@style/AppTheme.Show.Genre"/>
-                </LinearLayout>
+                    style="@style/AppTheme.GenreGrid"
+                    android:id="@+id/show_genre_gridView">
+
+                </GridView>
             </LinearLayout>
         </android.support.v7.widget.CardView>
 

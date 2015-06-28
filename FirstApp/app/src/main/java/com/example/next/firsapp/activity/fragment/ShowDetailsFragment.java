@@ -58,11 +58,14 @@ public class ShowDetailsFragment extends Fragment  {
         ((TextView) view.findViewById(R.id.TV_Show_Details_Seasons)).
                 setText("Seasons : " + show.airedEpisodes());
         ((TextView) view.findViewById(R.id.TV_Show_Details_Started)).
-                setText("Started in : " + show.firstAired().substring(0,4));
+                setText("Started in : " + show.firstAired().substring(0, 4));
         ((TextView) view.findViewById(R.id.TV_Show_Details_Country)).
                 setText("Country : " + show.country().toUpperCase());
         ((TextView) view.findViewById(R.id.TV_Show_Details_Homepage)).
                 setText("Homepage : " + show.trailer());
+
+        //configureRecyclerView(view);
+
 
         return view;
     }
