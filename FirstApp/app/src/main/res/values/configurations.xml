@@ -16,6 +16,6 @@
     <string name="broacast_action_show_update">com.movile.up.seriestracker.action.SHOW_UPDATE</string>
 
     <!-- Database -->
-    <string name="database_authority">com.movile.up.seriestracker.authority</string>
+    <string name="database_authority">com.example.next.firsapp.authority</string>
 
 </resources>

@@ -32,15 +32,14 @@
         android:id="@+id/TV_Show_Details_Year"
         style="@style/AppTheme.SeasonHeader.Year"/>
 
-    <ImageView
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/show_details_favorite"
         android:layout_marginTop="174.9dp"
         android:layout_marginLeft="287.8dp"
-        android:layout_width="56dp"
-        android:layout_height="56dp"
-        android:background="@drawable/episode_item_number"
-        android:src="@drawable/show_details_favorite_off"
-        android:scaleType="center"
-        android:id="@+id/IV_Season_Like"/>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/show_details_favorite_off" />
 
     <com.astuetz.PagerSlidingTabStrip
         android:id="@+id/tabs"

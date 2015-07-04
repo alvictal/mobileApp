@@ -42,6 +42,11 @@
             android:exported="false">
         </service>
 
+        <provider
+            android:name=".database.manual.provider.SeriesTrackerContentProvider"
+            android:authorities="@string/database_authority" />
+
+
         <!-- Local receiver -->
         <receiver
             android:name=".activity.receiver.UpdateLocalBroadCast"
