@@ -1,6 +1,7 @@
 package com.example.next.firsapp.database.dbflow;
 
 import android.content.Context;
+import android.database.Cursor;
 
 import com.example.next.firsapp.model.Favorite;
 import com.raizlabs.android.dbflow.sql.builder.Condition;
@@ -20,6 +21,11 @@ public class FavoriteDB {
     public void save(Favorite favorite){
         FavoriteEntitydb entity = new FavoriteEntitydb(favorite.slug(), favorite.title());
         entity.save();
+    }
+
+    public Cursor all(){
+        Cursor cursor = new Select().from(FavoriteEntitydb.class).queryCursorList().getCursor();
+        return cursor;
     }
 
     public Favorite query(String slug) {

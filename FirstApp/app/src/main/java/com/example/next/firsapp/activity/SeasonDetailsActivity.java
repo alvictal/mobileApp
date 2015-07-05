@@ -20,7 +20,7 @@ import com.example.next.firsapp.view.SeasonDetailsView;
 
 import java.util.List;
 
-public class SeasonDetailsActivity extends Activity implements SeasonDetailsView, OnClickEpisodeListener {
+public class SeasonDetailsActivity extends BaseNavigationToolbarActivity implements SeasonDetailsView, OnClickEpisodeListener {
     private EpisodeListAdapter mAdapter;
     private String showName;
     private long seasonNumber;
@@ -44,6 +44,8 @@ public class SeasonDetailsActivity extends Activity implements SeasonDetailsView
         }
 
         setContentView(R.layout.season_details_list);
+
+        configureToolbar("Season " + seasonNumber );
 
         SeasonDetailsPresenter seasonDetailsPresenter = new SeasonDetailsPresenter(this,this);
 

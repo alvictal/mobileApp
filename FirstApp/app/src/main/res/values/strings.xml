@@ -21,4 +21,10 @@
     <string name="show_details_genres_text">Genres</string>
     <string name="show_details_text">Details</string>
 
+    <!-- Base Navigation -->
+    <string name="base_navigation_drawer_open">Open</string>
+    <string name="base_navigation_drawer_close">Close</string>
+
+    <string name="favorite_shows">Favorite Shows</string>
+
 </resources>

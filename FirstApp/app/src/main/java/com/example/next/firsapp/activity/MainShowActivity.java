@@ -26,7 +26,7 @@ import java.util.List;
 /**
  * Created by movile on 27/06/15.
  */
-public class MainShowActivity extends Activity implements ShowListView, OnClickShowListener {
+public class MainShowActivity extends BaseNavigationDrawerActivity implements ShowListView, OnClickShowListener {
     private ShowListAdapter mAdapter;
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +34,8 @@ public class MainShowActivity extends Activity implements ShowListView, OnClickS
 
         setContentView(R.layout.show_gridview);
 
+        configureNavigation();
+        
         ShowListPresenter showListPresenter = new ShowListPresenter(this,this);
         GridView gv = (GridView) findViewById(R.id.show_gridView);
         mAdapter = new ShowListAdapter(this,this);

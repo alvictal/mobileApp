@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/base_navigation_drawer_toolbar"
+        style="@style/AppTheme.Base.Navigation.Toolbar" />
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/base_navigation_drawer_container"
+        android:layout_below="@id/base_navigation_drawer_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:id="@+id/base_navigation_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <include layout="@layout/base_loading" />
+
+        <FrameLayout
+            android:id="@+id/base_navigation_drawer_content"
+            style="@style/AppTheme.Base.Navigation.Drawer.Content" />
+    </android.support.v4.widget.DrawerLayout>
+</RelativeLayout>

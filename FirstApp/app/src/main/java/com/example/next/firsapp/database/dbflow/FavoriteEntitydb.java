@@ -1,5 +1,6 @@
 package com.example.next.firsapp.database.dbflow;
 
+import android.database.Cursor;
 import android.provider.BaseColumns;
 
 import com.raizlabs.android.dbflow.annotation.Column;
@@ -12,6 +13,9 @@ import com.raizlabs.android.dbflow.structure.BaseModel;
  */
 @Table(databaseName = SeriesTrackerDatabase.NAME)
 public class FavoriteEntitydb extends BaseModel {
+    public static final String COLUMN_SLUG = "slug";
+    public static final String COLUMN_TITLE = "title";
+
     @Column(name = BaseColumns._ID)
     @PrimaryKey(autoincrement = true)
     Long id;
@@ -36,6 +40,13 @@ public class FavoriteEntitydb extends BaseModel {
 
     public String title() {
         return title;
+    }
+
+
+    public FavoriteEntitydb fromCursor(Cursor cursor) {
+        title = cursor.getString(cursor.getColumnIndexOrThrow(this.COLUMN_TITLE));
+        slug = cursor.getString(cursor.getColumnIndexOrThrow(this.COLUMN_SLUG));
+        return this;
     }
 }
 

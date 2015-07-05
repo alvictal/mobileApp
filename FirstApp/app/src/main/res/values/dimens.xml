@@ -16,4 +16,16 @@
 
     <!-- TO BE CONTINUED -->
 
+    <!-- Base Navigation Toolbar -->
+    <dimen name="base_navigation_toolbar_height">56dp</dimen>
+    <dimen name="base_navigation_toolbar_minHeight">@dimen/base_navigation_toolbar_height</dimen>
+
+    <!-- Base Loading -->
+    <dimen name="base_loading_progress_size">48dp</dimen>
+
+
+    <!-- Base Navigation Drawer -->
+    <dimen name="base_navigation_drawer_content_width">300dp</dimen>
+
+
 </resources>

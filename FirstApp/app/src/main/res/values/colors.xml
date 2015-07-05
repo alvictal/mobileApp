@@ -24,6 +24,18 @@
         <color name="theme_windowBackground">@color/default_background_first</color>
         <color name="list_view_divider_color">@color/default_background_first</color>
 
+        <!-- Base Navigation Toolbar -->
+        <color name="base_navigation_toolbar_background">@color/default_color_first</color>
+        <color name="base_navigation_toolbar_transparent_background">#88333333</color>
+
+        <!-- Base Loading -->
+        <color name="base_loading_container_background">#99333333</color>
+
+
+        <!-- Base Navigation Drawer -->
+        <color name="base_navigation_drawer_content_background">@color/default_background_second</color>
+
+
         <!-- TO BE CONTINUED -->
 
 </resources>

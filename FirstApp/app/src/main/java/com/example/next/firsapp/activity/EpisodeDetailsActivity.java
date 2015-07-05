@@ -25,7 +25,7 @@ import com.example.next.firsapp.view.EpisodeDetailsView;
 //Usado inicialmente para aula com asynctask e interfaces
 //public class EpisodeDetailsActivity extends Activity implements onListenerEpisode, onListenerBitmap {
 
-public class EpisodeDetailsActivity extends Activity implements EpisodeDetailsView {
+public class EpisodeDetailsActivity extends BaseNavigationToolbarActivity implements EpisodeDetailsView {
     private String show;
     private long season;
     private long episode;
@@ -82,6 +82,8 @@ public class EpisodeDetailsActivity extends Activity implements EpisodeDetailsVi
         ((TextView) findViewById(R.id.TV_Episode_Details_Summary)).setText(episode.overview());
         String firstAired = FormatUtil.formatDate(FormatUtil.formatDate(episode.firstAired())).toString();
         ((TextView) findViewById(R.id.TV_Episode_Details_Date)).setText(firstAired);
+
+        configureToolbar("S" + episode.season() + " - " + episode.title());
 
     }
 

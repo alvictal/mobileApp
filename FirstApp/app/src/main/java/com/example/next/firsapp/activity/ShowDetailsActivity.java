@@ -1,5 +1,8 @@
 package com.example.next.firsapp.activity;
 
+import android.animation.Animator;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.app.Fragment;
 import android.content.Intent;
@@ -35,7 +38,7 @@ import com.example.next.firsapp.view.ShowDetailsView;
 /**
  * Created by aluisio on 6/23/15.
  */
-public class ShowDetailsActivity extends FragmentActivity implements ShowDetailsView, OnClickSeasonListener, FavoriteListener {
+public class ShowDetailsActivity extends BaseNavigationToolbarActivity implements ShowDetailsView, OnClickSeasonListener, FavoriteListener {
 
     private ShowFragmentAdapter adapterViewPager;
     private String screenshotUrl;
@@ -66,7 +69,7 @@ public class ShowDetailsActivity extends FragmentActivity implements ShowDetails
         favoriteView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (mFavorite == null){
+                if (mFavorite == null) {
                     setFavoriteShow(showName, mTitle, mLastStatus);
                 } else {
                     setFavoriteShow(mFavorite.slug(), mFavorite.title(), mLastStatus);
@@ -85,6 +88,7 @@ public class ShowDetailsActivity extends FragmentActivity implements ShowDetails
 
         ((TextView) findViewById(R.id.TV_Show_Details_Year)).setText(show.year().toString());
         ((TextView) findViewById(R.id.TV_Show_Details_Note)).setText(show.rating().toString().subSequence(0, 3));
+        configureToolbar(show.title());
 
         ViewPager vpPager = (ViewPager) findViewById(R.id.vpPager);
         adapterViewPager = (new ShowFragmentAdapter(getSupportFragmentManager(), show, this));
@@ -104,12 +108,47 @@ public class ShowDetailsActivity extends FragmentActivity implements ShowDetails
     }
 
     public void setFavoriteShow(String slug, String title, Integer lastStatus) {
+
+        makeAnimationDisappear();
+        makeAnimationAppear();
         if (lastStatus == 0) {
             getLoaderManager().initLoader(1, null, new FavoriteLoader(this, this, slug, title,"add")).forceLoad();
         } else if (lastStatus == 1) {
             getLoaderManager().initLoader(2, null, new FavoriteLoader(this,this,slug,title,"delete")).forceLoad();
         }
 
+    }
+
+    public void makeAnimationDisappear() {
+        ObjectAnimator animationX = ObjectAnimator.ofFloat(findViewById(R.id.show_details_favorite),"scaleX",1,0);
+        ObjectAnimator animationY = ObjectAnimator.ofFloat(findViewById(R.id.show_details_favorite),"scaleY",1,0);
+
+        AnimatorSet set = new AnimatorSet();
+        set.playTogether(animationX, animationY);
+        set.setDuration(200);
+        set.addListener(new Animator.AnimatorListener(){
+            public void onAnimationStart(Animator animator) {  }
+            public void onAnimationEnd(Animator animator) {  }
+            public void onAnimationCancel(Animator animator) {  }
+            public void onAnimationRepeat(Animator animator) {  }
+        });
+        set.start();
+    }
+
+    public void makeAnimationAppear() {
+        ObjectAnimator animationX = ObjectAnimator.ofFloat(findViewById(R.id.show_details_favorite),"scaleX",0,1);
+        ObjectAnimator animationY = ObjectAnimator.ofFloat(findViewById(R.id.show_details_favorite),"scaleY",0,1);
+
+        AnimatorSet set = new AnimatorSet();
+        set.playTogether(animationX, animationY);
+        set.setDuration(200);
+        set.addListener(new Animator.AnimatorListener(){
+            public void onAnimationStart(Animator animator) {  }
+            public void onAnimationEnd(Animator animator) {  }
+            public void onAnimationCancel(Animator animator) {  }
+            public void onAnimationRepeat(Animator animator) {  }
+        });
+        set.start();
     }
 
 

@@ -175,4 +175,46 @@
         <item name="android:clipToPadding">false</item>
     </style>
 
+    <style name="AppTheme.Base"></style>
+    <style name="AppTheme.Base.Navigation"></style>
+
+    <style name="AppTheme.Base.Navigation.Toolbar">
+        <item name="android:layout_height">@dimen/base_navigation_toolbar_height</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:minHeight">@dimen/base_navigation_toolbar_minHeight</item>
+        <item name="android:background">@color/base_navigation_toolbar_background</item>
+    </style>
+
+    <style name="AppTheme.Base.Navigation.Toolbar.Transparent">
+        <item name="android:background">@color/base_navigation_toolbar_transparent_background</item>
+    </style>
+
+    <!-- Base Loading -->
+    <style name="AppTheme.Base.Loading"></style>
+
+    <style name="AppTheme.Base.Loading.Container">
+        <item name="android:background">@color/base_loading_container_background</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <style name="AppTheme.Base.Loading.Progress">
+        <item name="android:layout_width">@dimen/base_loading_progress_size</item>
+        <item name="android:layout_height">@dimen/base_loading_progress_size</item>
+        <item name="android:indeterminate">true</item>
+    </style>
+
+
+    <!-- Base Navigation -->
+
+    <style name="AppTheme.Base.Navigation.Drawer"></style>
+
+    <style name="AppTheme.Base.Navigation.Drawer.Content">
+        <item name="android:layout_width">@dimen/base_navigation_drawer_content_width</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_gravity">left</item>
+        <item name="android:background">@color/base_navigation_drawer_content_background</item>
+    </style>
+
+
 </resources>
+
